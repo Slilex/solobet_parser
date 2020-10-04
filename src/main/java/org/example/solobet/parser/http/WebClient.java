@@ -22,7 +22,7 @@ public class WebClient  {
 
     public WebClient() {
         asyncHttpClient = asyncHttpClient(config()
-                .setKeepAlive(true)
+                .setKeepAlive(false)
                 .setConnectionSemaphoreFactory(new FactorySemaphoreMaxConnection(maxConnection, acquireTimeout))
                 .setMaxConnections(maxConnection)
                 .build());
