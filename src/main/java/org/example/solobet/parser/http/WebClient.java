@@ -18,12 +18,11 @@ public class WebClient  {
     private final AsyncHttpClient asyncHttpClient;
     private ExecutorService executorService = Executors.newFixedThreadPool(5);
     private final int maxConnection = 5;
-    private final int acquireTimeout = 2000;
 
     public WebClient() {
         asyncHttpClient = asyncHttpClient(config()
                 .setKeepAlive(false)
-                .setConnectionSemaphoreFactory(new FactorySemaphoreMaxConnection(maxConnection, acquireTimeout))
+                .setConnectionSemaphoreFactory(new FactorySemaphoreMaxConnection(maxConnection))
                 .setMaxConnections(maxConnection)
                 .build());
         logger.info("web client initialized");

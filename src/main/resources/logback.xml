@@ -9,7 +9,7 @@
     </appender>
     <appender name="FILE"
               class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <File>logs/md_farm.log</File>
+        <File>logs/log.log</File>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <Pattern>%d{dd-MM-YYYY HH:mm:ss.SSS} [%thread] %X{symbol} %-5level %logger{36} - %msg%n</Pattern>
         </encoder>

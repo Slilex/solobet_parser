@@ -16,11 +16,9 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -166,8 +164,7 @@ public class SolobetParsService {
                 event.setMatchId(gameid);
                 final Integer id = Util.getId();
 
-                String url = "https://solobet15.com/Sports/specialbets?MatchId=" + REPLACE_GAME_ID + "&quicktip=false&popup=false";
-                String fullUrl = url.replace(REPLACE_GAME_ID, gameid);
+                String fullUrl = MATCH_ID_URL.replace(REPLACE_GAME_ID, gameid);
 
                 idDocumentTypeMap.put(id, DocumentType.ODD);
                 idEvents.put(id, event);
